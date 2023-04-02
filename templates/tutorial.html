@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    .MainContainer {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      /* align-items: center; */
+      flex-wrap: wrap;
+    }
+
+    .ChildContainer {
+      flex: 0 0 33%;
+      padding: 10px;
+      /* height: 300px; */
+      box-sizing: border-box;
+      /* overflow: scroll; */
+    }
+
+    .ChildContainer > img {
+      width: 100%;
+    }
+
+    .ChildContainer > p {
+        height: 250px;
+        overflow: scroll;
+    }
+  </style>
+
+  <body>
+    <div class="MainContainer">
+      {% for item in data %}
+      <div class="ChildContainer">
+        <h2>{{item.title}}</h2>
+        <img src="{{item.image_url}}" />
+        <p>{{item.content}}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
